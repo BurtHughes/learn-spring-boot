@@ -4,9 +4,11 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.penguin.learn.learnspringboot.filter.TimeFilter;
+import com.penguin.learn.learnspringboot.listener.ListenerTest;
 import com.penguin.learn.learnspringboot.servlet.ServletTest;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -53,5 +55,10 @@ public class WebConfig {
         registrationBean.setUrlPatterns(urls);
 
         return registrationBean;
+    }
+
+    @Bean
+    public ServletListenerRegistrationBean<ListenerTest> servletListenerRegistrationBean() {
+        return new ServletListenerRegistrationBean<ListenerTest>(new ListenerTest());
     }
 }
