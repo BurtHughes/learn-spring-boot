@@ -3,7 +3,9 @@ package com.penguin.learn.learnspringboot.config;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.penguin.learn.learnspringboot.servlet.ServletTest;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -23,5 +25,10 @@ public class WebConfig {
         HttpMessageConverter<?> converter = fastJsonHttpMessageConverter;
 
         return new HttpMessageConverters(converter);
+    }
+
+    @Bean
+    public ServletRegistrationBean servletRegistrationBean() {
+        return new ServletRegistrationBean(new ServletTest(),"/servletTest");
     }
 }
