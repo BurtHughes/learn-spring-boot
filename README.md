@@ -2,4 +2,5 @@
 Learn spring boot by this project.
 
 JDK:1.8
-Dev IDE:Intellij IDEA
+
+Dev IDE:IntelliJ IDEA
