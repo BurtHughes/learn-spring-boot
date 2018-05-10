@@ -34,12 +34,17 @@ public class WebConfig {
         return new HttpMessageConverters(converter);
     }
 
+    /**
+     * 配置Servlet
+     * @return
+     */
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         return new ServletRegistrationBean(new ServletTest(),"/servletTest");
     }
 
     /**
+     * 配置过滤器
      * 添加到过滤器链，适合第三方过滤器
      * @return
      */
@@ -55,10 +60,16 @@ public class WebConfig {
         registrationBean.setUrlPatterns(urls);
 
         return registrationBean;
+
     }
 
+    /**
+     * 配置监听器
+     * @return
+     */
     @Bean
     public ServletListenerRegistrationBean<ListenerTest> servletListenerRegistrationBean() {
         return new ServletListenerRegistrationBean<ListenerTest>(new ListenerTest());
     }
+
 }
