@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeAspect {
 
-    @Around("execution(* com.penguin.learn.learnspringboot.web.FastJsonController..*(..))")
+    @Around("execution(* com.penguin.learn.learnspringboot.controller.FastJsonController..*(..))")
     public Object method(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("=====Aspect处理=======");
         Object[] args = joinPoint.getArgs();

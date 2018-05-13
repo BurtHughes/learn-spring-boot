@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨域测试</title>
+    <#--在另一个Web容器部署此html，部署的端口和此应用端口不一样，当此页面被加载时就发生跨域请求。-->
+</head>
+<body>
+    <button id="test">测试</button>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#test").on("click", function () {
+                $.ajax({
+                    "url":"http://127.0.0.1:8081/fastjson/test",
+                    "type":"get",
+                    "dataType":"json",
+                    "success":function (data) {
+                        console.log(data);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

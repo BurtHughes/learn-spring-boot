@@ -1,4 +1,4 @@
-package com.penguin.learn.learnspringboot.web;
+package com.penguin.learn.learnspringboot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,5 +12,15 @@ public class ThymeleafController {
     public String hello(Map<String, Object> map){
         map.put("msg", "Hello Thymeleaf");
         return "hello";
+    }
+
+    @RequestMapping("upload")
+    public String upload(){
+        return "upload";
+    }
+
+    @RequestMapping("webSocketServer")
+    public String webSocket() {
+        return "websocket";
     }
 }

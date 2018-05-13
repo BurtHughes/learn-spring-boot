@@ -15,7 +15,9 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.ArrayList;
@@ -84,4 +86,24 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return new ServletListenerRegistrationBean<ListenerTest>(new ListenerTest());
     }
 
+    /**
+     * 配置允许跨域请求的url和访问来源
+     * 粗粒度控制
+     * @return
+     */
+    /*@Bean
+    public WebMvcConfigurer corsConfigurer(){
+        return new WebMvcConfigurerAdapter(){
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                System.out.println("添加跨域请求");
+                registry.addMapping("/fastjson/**").allowedOrigins("http://127.0.0.1:8080");
+            }
+        };
+    }*/
+    /*@Override
+    public void addCorsMappings(CorsRegistry registry) {
+        System.out.println("添加跨域请求");
+        registry.addMapping("/fastjson/**").allowedOrigins("http://127.0.0.1:8080");
+    }*/
 }
