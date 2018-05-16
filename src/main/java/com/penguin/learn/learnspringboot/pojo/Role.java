@@ -35,6 +35,15 @@ public class Role implements Serializable {
         this.descr = descr;
     }
 
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", descr='" + descr + '\'' +
+                '}';
+    }
+
     @Id
     @GeneratedValue
     private Integer id;
