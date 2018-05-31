@@ -1,4 +1,4 @@
-package com.penguin.learn.springboot.pojo;
+package com.penguin.learn.springboot.domain;
 
 import java.io.Serializable;
 

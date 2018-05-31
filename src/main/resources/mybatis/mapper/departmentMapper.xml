@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.light.springboot.dao.DepartmentMapper">
+<mapper namespace="com.penguin.learn.springboot.mapper.DepartmentMapper">
     <insert id="insert" parameterType="com.penguin.learn.springboot.domain.Department">
         insert into department(id,name,descr) values(#{id},#{name},#{descr})
     </insert>

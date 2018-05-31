@@ -1,6 +1,6 @@
 package com.penguin.learn.springboot.mapper;
 
-import com.penguin.learn.springboot.pojo.Department;
+import com.penguin.learn.springboot.domain.Department;
 
 public interface DepartmentMapper {
 

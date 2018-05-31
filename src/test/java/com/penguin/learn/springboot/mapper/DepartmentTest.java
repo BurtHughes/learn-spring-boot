@@ -1,6 +1,6 @@
 package com.penguin.learn.springboot.mapper;
 
-import com.penguin.learn.springboot.pojo.Department;
+import com.penguin.learn.springboot.domain.Department;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
